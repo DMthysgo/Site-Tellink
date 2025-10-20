@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Projeto Totem 24h — Tellink & Prefeitura</title>
+    <meta
+      name="description"
+      content="Conheça os totens de vigilância 24h do projeto Vizinhança Colaborativa, uma parceria da Tellink com a prefeitura para uma cidade mais segura."
+    />
+    <meta
+      name="keywords"
+      content="totem de vigilância, segurança, vizinhança colaborativa, Campina Grande, Tellink"
+    />
+    <meta name="author" content="Tellink Telecom" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Projeto Totem 24h — Tellink & Prefeitura"
+    />
+    <meta
+      property="og:description"
+      content="Tecnologia de ponta para uma vizinhança mais segura e conectada."
+    />
+    <meta property="og:image" content="/og-image-totem.jpg" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      />
+    </noscript>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Tailwind config (cores Tellink)
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: { DEFAULT: "#E30613", 600: "#C10510", 700: "#A1040E" },
+              secondary: { DEFAULT: "#ffffff", 50: "#fafafa" },
+              accent: { DEFAULT: "#F59E0B" },
+            },
+            boxShadow: {
+              soft: "0 10px 30px rgba(0,0,0,.08)",
+              card: "0 4px 12px rgba(0,0,0,.1)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
+    ></script>
+  </head>
+  <body
+    class="bg-secondary-50 text-gray-800 dark:bg-neutral-900 dark:text-neutral-100"
+  >
+    <div class="w-full bg-neutral-100 dark:bg-neutral-800 text-sm"></div>
+
+    <header
+      class="sticky top-0 z-40 bg-white/90 dark:bg-neutral-900/80 glass border-b border-neutral-200/60 dark:border-neutral-800"
+    >
+      <nav
+        class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-3 text-2xl font-extrabold text-primary"
+        >
+          <span class="inline-block w-8 h-8 rounded-xl bg-primary"></span>
+          Tellink Telecom
+        </a>
+        <div class="flex items-center gap-4">
+          <ul class="hidden md:flex items-center gap-8 font-semibold text-lg">
+            <li>
+              <a
+                href="index.html#planos"
+                class="hover:text-primary transition-colors"
+                >Planos</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#empresarial"
+                class="text-primary font-bold transition-colors"
+                >Soluções</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#faq"
+                class="hover:text-primary transition-colors"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#contato"
+                class="hover:text-primary transition-colors"
+                >Contato</a
+              >
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/5583981286950?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20projeto%20dos%20totens."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hidden sm:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full shadow-soft hover:brightness-110 transition"
+          >
+            <span>Saber Mais</span>
+          </a>
+          <button
+            id="openMenu"
+            class="md:hidden p-2 rounded-lg border"
+            aria-label="Abrir menu"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden border-t border-neutral-200 dark:border-neutral-800"
+      ></div>
+    </header>
+
+    <section class="relative isolate overflow-hidden py-16 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 text-center">
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+          Projeto Vizinhança Colaborativa: <br /><span class="text-primary"
+            >Totens de Vigilância 24h</span
+          >
+        </h1>
+        <p
+          class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-neutral-600 dark:text-neutral-300"
+        >
+          Uma iniciativa da Tellink Telecom em parceria com a prefeitura para
+          levar mais segurança e tecnologia para os bairros da nossa cidade.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 bg-neutral-50 dark:bg-neutral-950/50">
+      <div
+        class="mx-auto max-w-7xl px-4 grid md:grid-cols-2 items-center gap-10"
+      >
+        <div class="prose dark:prose-invert max-w-none">
+          <h2 class="text-3xl font-extrabold">O que é o Totem?</h2>
+          <p>
+            O totem de vigilância é uma estação de monitoramento avançada,
+            equipada com tecnologia de ponta para garantir a segurança dos
+            espaços públicos. Ele funciona 24 horas por dia, 7 dias por semana,
+            conectado diretamente à nossa central e aos órgãos de segurança.
+          </p>
+          <ul>
+            <li>
+              <strong>Câmeras de Alta Definição:</strong> [Descreva o tipo de
+              câmera, resolução, visão noturna, etc.].
+            </li>
+            <li>
+              <strong>Conectividade Garantida:</strong> Conexão via fibra óptica
+              Tellink, garantindo transmissão estável e em tempo real.
+            </li>
+            <li>
+              <strong>Inteligência Artificial:</strong> [Explique o que a IA
+              faz: detecção de movimento, reconhecimento de padrões, etc.].
+            </li>
+            <li>
+              <strong>Botão de Pânico:</strong> Acesso direto à central de
+              emergência para uma resposta rápida.
+            </li>
+          </ul>
+        </div>
+        <div
+          class="bg-neutral-200 dark:bg-neutral-800 rounded-3xl h-80 flex items-center justify-center"
+        >
+          <p class="text-neutral-500">[Espaço para a imagem do totem]</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+      <div class="mx-auto max-w-7xl px-4">
+        <header class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-extrabold">
+            Explore o Totem em 3D
+          </h2>
+          <p class="mt-2 text-neutral-600 dark:text-neutral-300">
+            Interaja com o modelo 3D para ver todos os detalhes do nosso totem
+            de vigilância.
+          </p>
+        </header>
+        <div
+          class="mt-8 mx-auto max-w-3xl h-[500px] border dark:border-neutral-800 rounded-3xl overflow-hidden"
+        >
+          <model-viewer
+            id="meu-totem"
+            src="poste modelo 3d.glb"
+            alt="Modelo 3D do Totem de Vigilância"
+            camera-controls
+            auto-rotate
+            ar
+            camera-orbit="-2.428006475953184rad 1.245912749164625rad 16.658117864819097m"
+            totens.html:377
+            camera-target="-0.08587656248305502m 3.009278853021245m -0.20041078401754736m"
+            totens.html:378
+            field-of-view="23.372808492656105deg"
+            shadow-intensity="1"
+            style="width: 100%; height: 100%; --poster-color: transparent"
+            skybox-image="qwantani_sunset_puresky_4k.hdr"
+            exposure="1.2"
+          >
+          </model-viewer>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-neutral-50 dark:bg-neutral-950/50">
+      <div class="mx-auto max-w-7xl px-4">
+        <header class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-extrabold">
+            Como Funciona a Vizinhança Colaborativa
+          </h2>
+          <p class="mt-2 text-neutral-600 dark:text-neutral-300">
+            A tecnologia une moradores e poder público, criando uma rede de
+            proteção mútua e eficiente.
+          </p>
+        </header>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card"
+          >
+            <h3 class="font-bold text-lg">Acesso via App</h3>
+            <p class="mt-1 text-sm">
+              [Descreva como os moradores acessam as câmeras ou alertas pelo
+              aplicativo].
+            </p>
+          </div>
+          <div
+            class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card"
+          >
+            <h3 class="font-bold text-lg">Alertas Inteligentes</h3>
+            <p class="mt-1 text-sm">
+              [Explique como o sistema notifica sobre atividades suspeitas
+              detectadas pela IA].
+            </p>
+          </div>
+          <div
+            class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card"
+          >
+            <h3 class="font-bold text-lg">Comunicação Direta</h3>
+            <p class="mt-1 text-sm">
+              [Mencione a integração com a central da polícia, guarda municipal
+              ou a própria Tellink].
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="mx-auto max-w-7xl px-4">
+        <h2 class="text-3xl font-extrabold text-center">O Projeto em Ação</h2>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-neutral-200 dark:bg-neutral-800 rounded-2xl h-60 flex items-center justify-center"
+          >
+            <p class="text-neutral-500">[Imagem do totem instalado]</p>
+          </div>
+          <div
+            class="bg-neutral-200 dark:bg-neutral-800 rounded-2xl h-60 flex items-center justify-center"
+          >
+            <p class="text-neutral-500">[Interface do app]</p>
+          </div>
+          <div
+            class="bg-neutral-200 dark:bg-neutral-800 rounded-2xl h-60 flex items-center justify-center"
+          >
+            <p class="text-neutral-500">[Mapa da área de cobertura]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-10 border-t dark:border-neutral-800">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="mt-8 text-center text-xs text-neutral-500">
+          © <span id="year"></span> Tellink Telecom — Todos os direitos
+          reservados.
+        </div>
+      </div>
+    </footer>
+
+    <script defer>
+      // Tema (dark/light) com persistência
+      const html = document.documentElement;
+      const btnTheme = document.getElementById("toggleTheme");
+      if (btnTheme) {
+        const storedTheme = localStorage.getItem("theme");
+        if (
+          storedTheme === "dark" ||
+          (!storedTheme &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          html.classList.add("dark");
+          btnTheme.setAttribute("aria-pressed", "true");
+        }
+        btnTheme.addEventListener("click", () => {
+          const isDark = html.classList.toggle("dark");
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+          btnTheme.setAttribute("aria-pressed", String(isDark));
+        });
+      }
+
+      // Mobile menu
+      const openMenu = document.getElementById("openMenu");
+      const menu = document.getElementById("mobileMenu");
+      if (openMenu && menu) {
+        openMenu.addEventListener("click", () => {
+          const isOpen = menu.classList.toggle("hidden");
+          openMenu.setAttribute("aria-expanded", String(!isOpen));
+        });
+      }
+
+      // Ano no rodapé
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    </script>
+    <script>
+      const modelViewer = document.querySelector("#meu-totem");
+      const btnCamera = document.querySelector("#btnCamera");
+
+      btnCamera.addEventListener("click", () => {
+        const orbit = modelViewer.getCameraOrbit();
+        const target = modelViewer.getCameraTarget();
+        const fov = modelViewer.getFieldOfView();
+
+        console.log("Cole este código no seu HTML:");
+        console.log(
+          `camera-orbit="${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m"`
+        );
+        console.log(`camera-target="${target.x}m ${target.y}m ${target.z}m"`);
+        console.log(`field-of-view="${fov}deg"`);
+        alert(
+          "Valores da câmera copiados para o console do navegador! (Pressione F12 para ver)"
+        );
+      });
+    </script>
+  </body>
+</html>
