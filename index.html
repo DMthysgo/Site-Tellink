@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Tellink Telecom — Internet Fibra com Atendimento Campeão</title>
+  <meta name="description" content="Tellink Telecom: internet rápida e estável em Campina Grande. Planos residenciais e empresariais com Wi-Fi 6, câmeras com IA e suporte ágil pelo WhatsApp." />
+  <meta name="keywords" content="internet, fibra óptica, provedor regional, Campina Grande, Wi-Fi 6, câmeras com IA" />
+  <meta name="author" content="Tellink Telecom" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tellink Telecom — Internet Fibra com Atendimento Campeão" />
+  <meta property="og:description" content="Planos de 150 Mega a 1 Giga, Wi-Fi 6, câmeras com IA e suporte ágil. Contrate pelo WhatsApp!" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Performance: preconnects + fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config (cores Tellink)
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#E30613', // Vermelho Tellink
+              600: '#C10510',
+              700: '#A1040E'
+            },
+            secondary: {
+              DEFAULT: '#ffffff', // Branco
+              50: '#fafafa'
+            },
+            accent: {
+              DEFAULT: '#F59E0B' // Amarelo (mantido para destaques)
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,.08)',
+            card: '0 4px 12px rgba(0,0,0,.1)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- SwiperJS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- JSON-LD Schema: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tellink Telecom",
+    "url": "https://tellink.com.br/",
+    "logo": "https://tellink.com.br/logo.png",
+    "sameAs": [
+      "https://www.instagram.com/tellink_telecom/"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+55-83-98128-6950",
+      "contactType": "customer service",
+      "areaServed": ["BR-PB"],
+      "availableLanguage": ["pt-BR"]
+    }],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Pedro Álvares Cabral, 529, Loja 102",
+      "addressLocality": "Campina Grande",
+      "addressRegion": "PB",
+      "postalCode": "58100-000",
+      "addressCountry": "BR"
+    },
+    "foundingDate": "2019"
+  }
+  </script>
+
+  <style>
+    /* Utilitários extras */
+    .container-landing { max-width: 1200px; }
+    .glass { backdrop-filter: saturate(180%) blur(10px); background: rgba(255,255,255,.7); }
+    .dark .glass { background: rgba(20,20,20,.5); }
+    .hide-scrollbar { scrollbar-width: none; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+
+    /* Estilo para o carrossel de depoimentos */
+    .swiper-container {
+      position: relative;
+      padding-bottom: 40px; /* Espaço para a paginação */
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .testimonial-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
+    }
+    .swiper-pagination {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: #d1d5db;
+      opacity: 0.5;
+      border-radius: 50%;
+      transition: background-color 0.3s, opacity 0.3s;
+    }
+    .swiper-pagination-bullet-active {
+      background: #E30613;
+      opacity: 1;
+    }
+    .swiper-button-prev, .swiper-button-next {
+      color: #E30613;
+      opacity: 0; /* Invisível por padrão */
+      transition: opacity 0.3s ease;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.8); /* Fundo leve */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; /* Garante área clicável */
+      z-index: 10; /* Evita sobreposição */
+    }
+    .swiper-button-prev::after, .swiper-button-next::after {
+      font-size: 20px; /* Tamanho da seta */
+    }
+    /* Mostrar botões no hover (desktop) */
+    .swiper-container:hover .swiper-button-prev,
+    .swiper-container:hover .swiper-button-next {
+      opacity: 1;
+    }
+    /* Mostrar botões quando ativo (toque ou foco) */
+    .swiper-container.active .swiper-button-prev,
+    .swiper-container.active .swiper-button-next {
+      opacity: 1;
+    }
+    .swiper-button-prev:focus, .swiper-button-next:focus {
+      opacity: 1;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.3); /* Foco acessível */
+    }
+    /* Ajustes para mobile */
+    @media (max-width: 640px) {
+      .swiper-container {
+        padding-bottom: 30px; /* Menos espaço em mobile */
+      }
+      .swiper-button-prev, .swiper-button-next {
+        width: 32px;
+        height: 32px;
+      }
+      .swiper-button-prev::after, .swiper-button-next::after {
+        font-size: 16px; /* Setas menores em mobile */
+      }
+      .swiper-pagination {
+        bottom: -5px; /* Ajuste fino para mobile */
+      }
+      .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-secondary-50 text-gray-800 dark:bg-neutral-900 dark:text-neutral-100">
+  <!-- Barra de acessibilidade -->
+  <a href="#planos" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-primary focus:text-white focus:px-3 focus:py-2 focus:rounded-lg">Ir para os Planos</a>
+
+  <!-- Topbar -->
+  <div class="w-full bg-neutral-100 dark:bg-neutral-800 text-sm">
+    <div class="mx-auto container-landing px-4 py-2 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3" aria-label="Contato rápido">
+        <span class="inline-flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.2 2.21z"/></svg> (83) 98128-6950</span>
+        <a class="underline" href="https://wa.me/5583981286950?text=Ol%C3%A1%2C%20quero%20contratar%20Tellink" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="toggleTheme" class="text-xs px-3 py-1 rounded-full border hover:shadow-soft" aria-pressed="false" aria-label="Alternar tema">🌙/☀️</button>
+        <a href="https://www.instagram.com/tellink_telecom/" target="_blank" rel="noopener noreferrer" class="hover:underline">@tellink_telecom</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 bg-white/90 dark:bg-neutral-900/80 glass border-b border-neutral-200/60 dark:border-neutral-800">
+    <nav class="mx-auto container-landing px-4 py-4 flex items-center justify-between">
+      <a href="#inicio" class="flex items-center gap-3 text-2xl font-extrabold text-primary">
+        <span class="inline-block w-8 h-8 rounded-xl bg-primary"></span>
+        Tellink Telecom
+      </a>
+      <div class="flex items-center gap-4">
+        <ul class="hidden md:flex items-center gap-8 font-semibold text-lg">
+          <li><a href="#planos" class="hover:text-primary transition-colors">Planos</a></li>
+          <li><a href="#empresarial" class="hover:text-primary transition-colors">Soluções</a></li>
+          <li><a href="#depoimentos" class="hover:text-primary transition-colors">Depoimentos</a></li>
+          <li><a href="#faq" class="hover:text-primary transition-colors">FAQ</a></li>
+          <li><a href="#contato" class="hover:text-primary transition-colors">Contato</a></li>
+        </ul>
+        <a href="https://wa.me/5583981286950?text=Ol%C3%A1%2C%20quero%20contratar%20um%20plano%20Tellink" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full shadow-soft hover:brightness-110 transition">
+          <span>Contratar</span>
+        </a>
+        <button id="openMenu" class="md:hidden p-2 rounded-lg border" aria-label="Abrir menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-neutral-200 dark:border-neutral-800">
+      <div class="mx-auto container-landing px-4 py-3 grid gap-3">
+        <a href="#planos" class="py-2">Planos</a>
+        <a href="#empresarial" class="py-2">Soluções</a>
+        <a href="#depoimentos" class="py-2">Depoimentos</a>
+        <a href="#faq" class="py-2">FAQ</a>
+        <a href="#contato" class="py-2">Contato</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="relative isolate overflow-hidden">
+    <div class="mx-auto container-landing px-4 py-16 md:py-24 grid md:grid-cols-2 items-center gap-10">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Internet de Fibra <span class="text-primary">rápida e estável</span> com atendimento campeão</h1>
+        <p class="mt-4 text-lg md:text-xl text-neutral-600 dark:text-neutral-300">Planos de 150 Mega a 1 Giga. Wi-Fi 6 nos planos avançados. Câmeras com IA e central de alarme para sua segurança.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#planos" class="inline-flex items-center justify-center rounded-2xl bg-primary px-5 py-3 text-white font-semibold shadow-soft hover:brightness-110">Ver planos</a>
+          <a href="https://wa.me/5583981286950?text=Quero%20saber%20qual%20plano%20recomenda%20pra%20minha%20casa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-2xl border px-5 py-3 font-semibold hover:shadow-soft">Tirar dúvidas no WhatsApp</a>
+        </div>
+        <ul class="mt-6 grid grid-cols-2 gap-4 text-sm">
+          <li class="flex items-center gap-2">✅ Instalação rápida</li>
+          <li class="flex items-center gap-2">✅ Suporte qualificado</li>
+          <li class="flex items-center gap-2">✅ Equipamentos modernos</li>
+          <li class="flex items-center gap-2">✅ Cobertura em CG</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selo promo -->
+  <section class="mx-auto container-landing px-4 -mt-8 md:-mt-12 relative z-10">
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="glass rounded-2xl p-5 shadow-soft border border-white/50 dark:border-neutral-800">
+        <p class="text-sm">🎁 <strong>Promo:</strong> 50% na 1ª parcela (planos 150, 300, 450 Mega). Consulte condições.</p>
+      </div>
+      <div class="glass rounded-2xl p-5 shadow-soft border border-white/50 dark:border-neutral-800">
+        <p class="text-sm">🚀 <strong>Wi-Fi 6:</strong> incluso a partir de 600 Mega.</p>
+      </div>
+      <div class="glass rounded-2xl p-5 shadow-soft border border-white/50 dark:border-neutral-800">
+        <p class="text-sm">🛡️ <strong>1 Giga Empresarial:</strong> Wi-Fi 6 + 2 câmeras com IA ou alarme por R$ 199,90/mês.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planos -->
+  <section id="planos" class="py-16 md:py-24">
+    <div class="mx-auto container-landing px-4">
+      <header class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Planos residenciais</h2>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Os mais vendidos: <strong>300</strong> e <strong>450 Mega</strong>.</p>
+      </header>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- 150 Mega -->
+        <article class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold">150 Mega</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800">Wi-Fi 5</span>
+          </div>
+          <p class="mt-2 text-3xl font-extrabold">R$ 59,90 <span class="text-base font-medium text-neutral-500">/mês</span></p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>50% na 1ª parcela</li>
+            <li>Fibra óptica</li>
+            <li>Consulte taxa de instalação</li>
+          </ul>
+          <a href="https://wa.me/5583981286950?text=Quero%20contratar%20150%20Mega%20Tellink" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-primary px-4 py-3 font-semibold text-white hover:brightness-110">Contratar</a>
+        </article>
+        <!-- 300 Mega (mais vendido) -->
+        <article class="relative rounded-3xl border-2 border-accent bg-white dark:bg-neutral-900 dark:border-yellow-600 p-6 shadow-card">
+          <span class="absolute -top-3 right-4 text-xs bg-accent text-black px-2 py-1 rounded-full">Mais vendido</span>
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold">300 Mega</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800">Wi-Fi 5</span>
+          </div>
+          <p class="mt-2 text-3xl font-extrabold">R$ 69,90 <span class="text-base font-medium text-neutral-500">/mês</span></p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>50% na 1ª parcela</li>
+            <li>Fibra óptica</li>
+            <li>Consulte taxa de instalação</li>
+          </ul>
+          <a href="https://wa.me/5583981286950?text=Quero%20contratar%20300%20Mega%20Tellink" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-primary px-4 py-3 font-semibold text-white hover:brightness-110">Contratar</a>
+        </article>
+        <!-- 450 Mega (destaque) -->
+        <article class="relative rounded-3xl border-2 border-primary bg-white dark:bg-neutral-900 dark:border-primary-700 p-6 shadow-card">
+          <span class="absolute -top-3 right-4 text-xs bg-primary text-white px-2 py-1 rounded-full">Recomendado</span>
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold">450 Mega</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800">Wi-Fi 5</span>
+          </div>
+          <p class="mt-2 text-3xl font-extrabold">R$ 79,90 <span class="text-base font-medium text-neutral-500">/mês</span></p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>50% na 1ª parcela</li>
+            <li>Fibra óptica</li>
+            <li>Consulte taxa de instalação</li>
+          </ul>
+          <a href="https://wa.me/5583981286950?text=Quero%20contratar%20450%20Mega%20Tellink" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-primary px-4 py-3 font-semibold text-white hover:brightness-110">Contratar</a>
+        </article>
+        <!-- 600 Mega -->
+        <article class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold">600 Mega</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800">Wi-Fi 6</span>
+          </div>
+          <p class="mt-2 text-3xl font-extrabold">R$ 99,90 <span class="text-base font-medium text-neutral-500">/mês</span></p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>50% nas 4 primeiras parcelas</li>
+            <li>Fibra óptica</li>
+            <li>Consulte taxa de instalação</li>
+          </ul>
+          <a href="https://wa.me/5583981286950?text=Quero%20contratar%20600%20Mega%20Tellink" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-primary px-4 py-3 font-semibold text-white hover:brightness-110">Contratar</a>
+        </article>
+        <!-- 1 Giga -->
+        <article class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold">1 Giga (Empresarial)</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800">Wi-Fi 6</span>
+          </div>
+          <p class="mt-2 text-3xl font-extrabold">R$ 199,90 <span class="text-base font-medium text-neutral-500">/mês</span></p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>2 câmeras com IA <em>ou</em> alarme incluído</li>
+            <li>Consultoria para empresas</li>
+            <li>Instalação sob análise</li>
+          </ul>
+          <a href="https://wa.me/5583981286950?text=Quero%20contratar%201%20Giga%20Empresarial%20Tellink" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-primary px-4 py-3 font-semibold text-white hover:brightness-110">Falar com consultor</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soluções Empresariais -->
+  <section id="empresarial" class="py-16 bg-neutral-50 dark:bg-neutral-950/50">
+    <div class="mx-auto container-landing px-4">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Soluções empresariais</h2>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Internet dedicada, roteadores Wi-Fi 6, monitoramento com IA, central de alarme e consultoria.</p>
+      </div>
+      <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card">
+          <div class="text-3xl">📶</div>
+          <h3 class="mt-3 font-bold text-lg">Link dedicado & Failover</h3>
+          <p class="mt-1 text-sm">Configuração avançada MikroTik (BGP/OSPF se necessário), balanceamento e contingência.</p>
+        </div>
+        <div class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card">
+          <div class="text-3xl">🛡️</div>
+          <h3 class="mt-3 font-bold text-lg">Firewall & Segurança</h3>
+          <p class="mt-1 text-sm">Regras por boas práticas, listas dinâmicas, proteção DDoS básica e segmentação de rede.</p>
+        </div>
+        <div class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card">
+          <div class="text-3xl">🎥</div>
+          <h3 class="mt-3 font-bold text-lg">Câmeras com IA</h3>
+          <p class="mt-1 text-sm">Reconhecimento de pessoas e veículos, LPR, alertas e integração com central.</p>
+        </div>
+        <div class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card">
+          <div class="text-3xl">📞</div>
+          <h3 class="mt-3 font-bold text-lg">Telefonia/VoIP</h3>
+          <p class="mt-1 text-sm">URA simples, ramais, bilhetagem e gravação conforme necessidade.</p>
+        </div>
+        <div class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card">
+          <div class="text-3xl">📊</div>
+          <h3 class="mt-3 font-bold text-lg">Consultoria & SLA</h3>
+          <p class="mt-1 text-sm">Atendimento ágil, janela de manutenção e relatórios mensais.</p>
+        </div>
+        <div class="rounded-3xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card">
+          <div class="text-3xl">🔒</div>
+          <h3 class="mt-3 font-bold text-lg">Alarme Integrado</h3>
+          <p class="mt-1 text-sm">Câmeras com função de alarme e disparo após violação — central 24h.</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <a href="https://wa.me/5583981286950?text=Quero%20uma%20proposta%20empresarial%20Tellink" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-3 text-white font-semibold hover:brightness-110">Solicitar proposta</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos (Carrossel com SwiperJS) -->
+  <section id="depoimentos" class="py-16 bg-neutral-50 dark:bg-neutral-950/50">
+    <div class="mx-auto container-landing px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-center">O que nossos clientes dizem</h2>
+      <div class="mt-8 swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <figure class="testimonial-card rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card max-w-md mx-auto">
+              <blockquote class="text-lg font-medium italic text-gray-800 dark:text-neutral-100">“Estou muito satisfeito com a conexão da Tellink! Rápida, estável e com ótimo atendimento.”</blockquote>
+              <figcaption class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">— Lucas L., Campina Grande</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure class="testimonial-card rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card max-w-md mx-auto">
+              <blockquote class="text-lg font-medium italic text-gray-800 dark:text-neutral-100">“Instalação rápida e suporte que resolve de primeira. Recomendo!”</blockquote>
+              <figcaption class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">— Marina S., Campina Grande</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure class="testimonial-card rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card max-w-md mx-auto">
+              <blockquote class="text-lg font-medium italic text-gray-800 dark:text-neutral-100">“Cobertura excelente no meu bairro e preço justo.”</blockquote>
+              <figcaption class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">— Diego A., Campina Grande</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure class="testimonial-card rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card max-w-md mx-auto">
+              <blockquote class="text-lg font-medium italic text-gray-800 dark:text-neutral-100">“Wi-Fi 6 fez diferença aqui. Streaming e reuniões sem travar.”</blockquote>
+              <figcaption class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">— Ana P., Campina Grande</figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure class="testimonial-card rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-6 shadow-card max-w-md mx-auto">
+              <blockquote class="text-lg font-medium italic text-gray-800 dark:text-neutral-100">“Atendimento pelo Whats rápido e eficiente.”</blockquote>
+              <figcaption class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">— João C., Campina Grande</figcaption>
+            </figure>
+          </div>
+        </div>
+        <!-- Navegação -->
+        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Slide anterior"></div>
+        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Próximo slide"></div>
+        <!-- Paginação -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16">
+    <div class="mx-auto container-landing px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-center">Perguntas frequentes</h2>
+      <div class="mt-8 grid gap-4 max-w-3xl mx-auto">
+        <details class="rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-4 group">
+          <summary class="cursor-pointer text-lg font-semibold">Qual o prazo de instalação?</summary>
+          <p class="mt-2 text-sm">Em média 24 a 72 horas úteis após aprovação do cadastro na área coberta.</p>
+        </details>
+        <details class="rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-4 group">
+          <summary class="cursor-pointer text-lg font-semibold">Há fidelidade?</summary>
+          <p class="mt-2 text-sm">Pode haver fidelização promocional em alguns planos. Consulte condições no momento da contratação.</p>
+        </details>
+        <details class="rounded-2xl border bg-white dark:bg-neutral-900 dark:border-neutral-800 p-4 group">
+          <summary class="cursor-pointer text-lg font-semibold">Como funcionam as câmeras com IA?</summary>
+          <p class="mt-2 text-sm">As câmeras identificam pessoas/veículos, enviam alertas e podem acionar alarme em caso de violação.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-16 bg-neutral-50 dark:bg-neutral-950/50">
+    <div class="mx-auto container-landing px-4 grid md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold">Fale com a gente</h2>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Estamos prontos para tirar dúvidas e fechar sua contratação.</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li>📍 Rua Pedro Álvares Cabral, 529, Loja 102 — Campina Grande/PB</li>
+          <li>📱 WhatsApp: <a class="underline" href="https://wa.me/5583981286950?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20os%20planos%20Tellink" target="_blank" rel="noopener noreferrer">(83) 98128-6950</a></li>
+          <li>📧 E-mail: <a class="underline" href="mailto:tell.linktelecom@gmail.com">tell.linktelecom@gmail.com</a></li>
+          <li>🆔 CNPJ: 38.346.388/0001-50</li>
+          <li>📸 Instagram: <a class="underline" href="https://www.instagram.com/tellink_telecom/" target="_blank" rel="noopener noreferrer">@tellink_telecom</a></li>
+        </ul>
+      </div>
+      <form id="formContato" class="bg-white dark:bg-neutral-900 rounded-3xl p-6 border dark:border-neutral-800 shadow-card" aria-label="Formulário de contato">
+        <div class="grid gap-4">
+          <div>
+            <label class="text-sm" for="nome">Nome</label>
+            <input id="nome" name="nome" class="mt-1 w-full rounded-2xl border px-4 py-3 dark:bg-neutral-900 dark:border-neutral-800" required />
+          </div>
+          <div>
+            <label class="text-sm" for="telefone">Telefone/WhatsApp</label>
+            <input id="telefone" name="telefone" class="mt-1 w-full rounded-2xl border px-4 py-3" inputmode="tel" required />
+          </div>
+          <div>
+            <label class="text-sm" for="plano">Plano de interesse</label>
+            <select id="plano" name="plano" class="mt-1 w-full rounded-2xl border px-4 py-3">
+              <option value="">Selecione…</option>
+              <option>150 Mega</option>
+              <option>300 Mega</option>
+              <option>450 Mega</option>
+              <option>600 Mega</option>
+              <option>1 Giga (Empresarial)</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm" for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" class="mt-1 w-full min-h-[100px] rounded-2xl border px-4 py-3"></textarea>
+          </div>
+          <div class="flex items-center gap-2 text-xs">
+            <input id="lgpd" type="checkbox" required />
+            <label for="lgpd">Concordo com a política de privacidade (LGPD).</label>
+          </div>
+          <button type="submit" class="rounded-2xl bg-primary text-white px-5 py-3 font-semibold hover:brightness-110">Enviar pelo WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="py-10 border-t dark:border-neutral-800">
+    <div class="mx-auto container-landing px-4 grid md:grid-cols-3 gap-6 text-sm">
+      <div>
+        <div class="flex items-center gap-2 text-lg font-extrabold text-primary"><span class="inline-block w-6 h-6 rounded-xl bg-primary"></span> Tellink Telecom</div>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-300">Desde 2019 conectando pessoas e empresas com qualidade e atendimento humano.</p>
+      </div>
+      <div>
+        <h3 class="font-bold">Atendimento</h3>
+        <ul class="mt-2 space-y-1">
+          <li>Seg–Sex: 08h–18h</li>
+          <li>Sáb: 08h–12h</li>
+          <li><a class="underline" href="https://wa.me/5583981286950?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20os%20planos%20Tellink" target="_blank" rel="noopener noreferrer">WhatsApp (83) 98128-6950</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold">Links</h3>
+        <ul class="mt-2 space-y-1">
+          <li><a href="#planos" class="hover:underline">Planos</a></li>
+          <li><a href="#empresarial" class="hover:underline">Soluções empresariais</a></li>
+          <li><a href="#faq" class="hover:underline">FAQ</a></li>
+          <li><a href="#contato" class="hover:underline">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 text-center text-xs text-neutral-500">© <span id="year"></span> Tellink Telecom — Todos os direitos reservados.</div>
+  </footer>
+
+  <!-- LGPD banner -->
+  <div id="lgpdBanner" class="fixed bottom-4 inset-x-4 md:inset-x-auto md:right-4 md:max-w-xl bg-white dark:bg-neutral-900 border dark:border-neutral-800 rounded-2xl p-4 shadow-card hidden" role="dialog" aria-live="polite">
+    <p class="text-sm">Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="#" class="underline">Política de Privacidade</a>.</p>
+    <div class="mt-3 flex gap-2">
+      <button id="lgpdAceitar" class="rounded-xl bg-primary text-white px-4 py-2 text-sm">Aceitar</button>
+      <button id="lgpdRecusar" class="rounded-xl border px-4 py-2 text-sm">Recusar</button>
+    </div>
+  </div>
+
+  <script defer>
+    // Tema (dark/light) com persistência
+    const html = document.documentElement;
+    const btnTheme = document.getElementById('toggleTheme');
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+      btnTheme?.setAttribute('aria-pressed', 'true');
+    }
+    btnTheme?.addEventListener('click', () => {
+      const isDark = html.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      btnTheme.setAttribute('aria-pressed', String(isDark));
+    });
+
+    // Mobile menu
+    const openMenu = document.getElementById('openMenu');
+    const menu = document.getElementById('mobileMenu');
+    openMenu?.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('hidden');
+      openMenu.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // Ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // LGPD simples
+    const lgpdBanner = document.getElementById('lgpdBanner');
+    const lgpdKey = 'lgpd-consent';
+    if (!localStorage.getItem(lgpdKey)) lgpdBanner.classList.remove('hidden');
+    document.getElementById('lgpdAceitar')?.addEventListener('click', () => { localStorage.setItem(lgpdKey, 'accepted'); lgpdBanner.remove(); });
+    document.getElementById('lgpdRecusar')?.addEventListener('click', () => { localStorage.setItem(lgpdKey, 'rejected'); lgpdBanner.remove(); });
+
+    // Formulário de contato -> WhatsApp
+    const formContato = document.getElementById('formContato');
+    formContato?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const tel = document.getElementById('telefone').value.trim();
+      const plano = document.getElementById('plano').value.trim();
+      const msg = document.getElementById('mensagem').value.trim();
+      const txt = encodeURIComponent(`Olá! Sou ${nome}. Tel: ${tel}. Plano: ${plano || 'a definir'}. Mensagem: ${msg || 'Sem mensagem adicional'}`);
+      window.open(`https://wa.me/5583981286950?text=${txt}`, '_blank', 'noopener,noreferrer');
+    });
+
+    // Inicialização do SwiperJS para o carrossel com verificação
+    document.addEventListener('DOMContentLoaded', () => {
+      const swiperContainer = document.querySelector('.swiper-container');
+      if (swiperContainer) {
+        const swiper = new Swiper(swiperContainer, {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active',
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          },
+        });
+        // Verificação adicional para garantir que os botões de navegação estejam associados
+        const nextButton = swiperContainer.querySelector('.swiper-button-next');
+        const prevButton = swiperContainer.querySelector('.swiper-button-prev');
+        if (nextButton && prevButton) {
+          nextButton.addEventListener('click', () => swiper.slideNext());
+          prevButton.addEventListener('click', () => swiper.slidePrev());
+        }
+      }
+
+      // Mostrar/esconder botões no mobile com toque
+      swiperContainer.addEventListener('touchstart', () => {
+        swiperContainer.classList.add('active');
+        setTimeout(() => {
+          swiperContainer.classList.remove('active');
+        }, 3000); // Esconde após 3 segundos
+      });
+    });
+  </script>
+</body>
+</html>
