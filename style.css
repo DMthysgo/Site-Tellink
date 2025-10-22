@@ -1,0 +1,57 @@
+.hotspot {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #e30613;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+.hotspot:hover {
+  transform: scale(1.2);
+  border-width: 3px;
+}
+.hotspot > * {
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.hotspot.visible > * {
+  display: block;
+}
+.annotation {
+  position: absolute;
+  left: 150%;
+  top: 50%;
+  background-color: #fff;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 250px;
+  font-size: 14px;
+  line-height: 1.5;
+  z-index: 10;
+}
+.annotation strong {
+  font-weight: bold;
+  color: #e30613;
+}
+.hotspot-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: #e30613;
+  pointer-events: none;
+}
+.hotspot.visible .hotspot-number,
+.hotspot:hover .hotspot-number {
+  color: white;
+}
+.hotspot.visible,
+.hotspot:hover {
+  background: #e30613;
+}
