@@ -38,7 +38,8 @@
     <!-- Titulo -->
     <title>Tellink Telecom - Totem 24h</title>
     <!-- Icone da página -->
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="assets/Icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/Icons/favicon.png" />
 
     <!-- Conexão com API do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
@@ -49,7 +50,7 @@
     />
 
     <!-- Carregar CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- Carregar o Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -96,6 +97,11 @@
           href="#inicio"
           class="flex items-center gap-3 text-xl font-extrabold text-primary"
         >
+          <img
+            src="/assets/icons/favicon.svg"
+            alt="Ícone do Totem"
+            class="w-8 h-8"
+          />
           Tellink - Totem 24h
         </a>
         <div class="flex items-center gap-4">
@@ -285,13 +291,13 @@
             <!-- Configurações do Modelo 3D -->
             <model-viewer
               id="totem-infografico"
-              src="poste modelo 3d.glb"
+              src="assets/models/poste modelo 3d.glb"
               alt="Modelo 3D interativo do Totem de Vigilância"
               camera-controls
               ar
               shadow-intensity="1"
               style="width: 100%; height: 100%; --poster-color: transparent"
-              skybox-image="qwantani_sunset_puresky_4k.hdr"
+              skybox-image="assets/models/qwantani_sunset_puresky_4k.hdr"
               exposure="1.2"
               camera-orbit="225deg 78deg 15m"
               field-of-view="30deg"
@@ -483,12 +489,12 @@
         <div class="w-full h-[400px] md:h-[600px]">
           <model-viewer
             id="totem-simulacao"
-            src="poste modelo 3d cena origen.glb"
+            src="assets/models/poste modelo 3d cena origen.glb"
             alt="Simulação do totem em um ambiente urbano"
             autoplay
             shadow-intensity="1.5"
             style="width: 100%; height: 100%; background-color: transparent"
-            skybox-image="qwantani_sunset_puresky_4k.hdr"
+            skybox-image="assets/models/qwantani_sunset_puresky_4k.hdr"
             exposure="1.5"
             camera-orbit="0deg 80deg 18m"
             field-of-view="15deg"
@@ -751,6 +757,6 @@
     </footer>
 
     <!-- Importar JS -->
-    <script src="main.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

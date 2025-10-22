@@ -17,8 +17,8 @@
 
   // --- LÓGICA DO TEMA (CLARO/ESCURO) ---
   const themeToggleBtn = doc.getElementById("theme-toggle-btn");
-  const skyboxClaro = "qwantani_sunset_puresky_4k.hdr";
-  const skyboxEscuro = "moonless_golf_4k.hdr";
+  const skyboxClaro = "assets/models/qwantani_sunset_puresky_4k.hdr";
+  const skyboxEscuro = "assets/models/moonless_golf_4k.hdr";
   const viewerInfografico = doc.querySelector("#totem-infografico");
   const viewerSimulacao = doc.querySelector("#totem-simulacao");
 
